@@ -1,0 +1,173 @@
+
+
+.banner {
+    background-image: url("../img/dungeons-banner.png");
+    padding: 120px 0;
+    background-size: cover;
+}
+
+.banner .container {
+    height: 350px;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner .container p {
+    width: 280px;
+    color:gold;
+    font-size: 26px;
+    text-align: center;
+}
+
+ .veu{
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    padding: 20px;
+    width: 23vw;
+    border-radius: 30px;
+
+}
+
+.banner .container b{
+    color:red;
+}
+
+
+.sobre {
+    background-color:rgb(23, 27, 27);
+    padding: 50px 0;       
+}
+
+.texto {
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    padding: 30px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.sobre p {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    color: gold;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.banner2 {
+    background-image: url("../img/dragao-banner.jpg");
+    padding: 120px 0;
+    background-size: cover;   
+}
+
+.banner2 .container {
+    height: 350px;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner2 .container p {
+    width: 280px;
+    color:gold;
+    font-size: 26px;
+    text-align: center;
+}
+
+.banner2 .container b{
+    color:red;
+}
+
+.banner3 {
+    background-image: url("../img/cenario-banner.jpg");
+    padding: 150px 0;
+    background-size: cover;   
+}
+
+.banner3 .container {
+    height: 350px;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner3 .container p {
+    width: 100%;
+    color:gold;
+    font-size: 20px;
+    text-align:center;
+}
+
+.banner3 .container b {
+    color:red;
+}
+
+.banner3 .veu {
+    width: 100%;
+}
+
+.sobre_dif {
+    background-color:rgb(23, 27, 27);
+    padding: 50px 0;      
+}
+
+.sobre_dif .texto {
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.sobre_dif p {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    color: gold;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.banner4 {
+    background-image: url("../img/Rpg-banner.webp");
+    padding: 120px 0;
+    background-size: cover;
+}
+
+.banner4 .container {
+    height: 350px;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner4 .container p {
+    width: 280px;
+    color:gold;
+    font-size: 24px;
+    text-align: center;
+}
+
+.banner4 .container b {
+    color: red;
+}
+
+.sobre_dif-2 {
+    background-color:rgb(23, 27, 27);
+    padding: 50px 0;      
+}
+
+.sobre_dif-2 .texto {
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.sobre_dif-2 p {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    color: gold;
+    font-weight: bold;
+    font-size: 18px;
+} 
