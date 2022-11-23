@@ -1,7 +1,7 @@
 
 
 .banner {
-    background-image: url("../img/dungeons-banner.png");
+    background-image: url("../assets/imgs/dungeons-banner.png");
     padding: 120px 0;
     background-size: cover;
 }
@@ -56,7 +56,7 @@
 }
 
 .banner2 {
-    background-image: url("../img/dragao-banner.jpg");
+    background-image: url("../assets/imgs/dragao-banner.jpg");
     padding: 120px 0;
     background-size: cover;   
 }
@@ -79,7 +79,7 @@
 }
 
 .banner3 {
-    background-image: url("../img/cenario-banner.jpg");
+    background-image: url("../assets/imgs/cenario-banner.jpg");
     padding: 150px 0;
     background-size: cover;   
 }
@@ -128,7 +128,7 @@
 }
 
 .banner4 {
-    background-image: url("../img/Rpg-banner.webp");
+    background-image: url("../assets/imgs/Rpg-banner.webp");
     padding: 120px 0;
     background-size: cover;
 }
