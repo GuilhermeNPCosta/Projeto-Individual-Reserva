@@ -173,5 +173,28 @@
 } 
 
 .banner5 {
-    
+    background-image: url("../assets/imgs/Gothic.jpg");
+    padding: 200px 0;
+    background-size: cover;   
+}
+
+.banner5 .container {
+    height: 350px;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner5 .container p {
+    width: 100%;
+    color:gold;
+    font-size: 20px;
+    text-align:center;
+}
+
+.banner5 .container b {
+    color:red;
+}
+
+.banner5 .veu {
+    width: 100%;
 }
