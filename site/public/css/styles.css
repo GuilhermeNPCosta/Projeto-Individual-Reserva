@@ -19,6 +19,8 @@
     text-align: center;
 }
 
+
+
  .veu{
     background-color: rgba(0, 0, 0, 0.75);
     display: flex;
@@ -32,6 +34,42 @@
     color:red;
 }
 
+.container-tamanho-conteudo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.container-tamanho-conteudo .veu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: auto;
+}
+
+.card-medio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-medio h2{
+    text-align: center;
+    color:darkorchid;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#div_aguardar {
+    display: none;
+}
 
 .sobre {
     background-color:rgb(23, 27, 27);
@@ -197,4 +235,36 @@
 
 .banner5 .veu {
     width: 100%;
+}
+
+.banner6 {
+    background-image: url("../assets/imgs/pessoas-banner.jpg");
+    padding: 120px 0;
+    background-size: cover;
+}
+
+.banner6 .container {
+    height: 350px;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner6 .container p {
+    width: 280px;
+    color:gold;
+    font-size: 26px;
+    text-align: center;
+}
+
+.banner6 .veu{
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    padding: 20px;
+    width: 23vw;
+    border-radius: 30px;
+
+}
+
+.banner6 .container b{
+    color:red;
 }
