@@ -2,7 +2,7 @@
 
 .banner {
     background-image: url("../assets/imgs/dungeons-banner.png");
-    padding: 120px 0;
+    padding: 130px 0;
     background-size: cover;
 }
 
@@ -19,15 +19,12 @@
     text-align: center;
 }
 
-
-
  .veu{
     background-color: rgba(0, 0, 0, 0.75);
     display: flex;
     padding: 20px;
     width: 23vw;
     border-radius: 30px;
-
 }
 
 .banner .container b{
@@ -56,7 +53,9 @@
 }
 
 .card-medio h2{
+    font-size: 22px;
     text-align: center;
+    margin-bottom: 10px;
     color:darkorchid;
 }
 
@@ -65,6 +64,56 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.formulario .tipo_campo {
+    margin-bottom: 5px;
+    color:deeppink;
+    font-weight: bolder;
+}
+
+#nome_input {
+    margin-bottom: 10px;
+    padding: 3px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+#email_input {
+    margin-bottom: 10px;
+    padding: 3px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+#senha_input {
+    margin-bottom: 10px;
+    padding: 3px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+#confirmacao_senha_input  {
+    margin-bottom: 10px;
+    padding: 3px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.btn {
+    padding: 7px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bolder;
+    background-color:crimson;
+    color: gold;
+}
+
+.btn:hover {
+    color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+    background-image: url("../assets/imgs/Lich.png");
+    background-size: 50%;
 }
 
 #div_aguardar {
@@ -180,35 +229,13 @@
 .banner4 .container p {
     width: 280px;
     color:gold;
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
 }
 
 .banner4 .container b {
     color: red;
 }
-
-.sobre_dif-2 {
-    background-color:rgb(23, 27, 27);
-    padding: 50px 0;      
-}
-
-.sobre_dif-2 .texto {
-    height: auto;
-    background-color: rgba(0, 0, 0, 0.75);
-    display: flex;
-    padding: 20px;
-    width: 100%;
-    border-radius: 50px;
-}
-
-.sobre_dif-2 p {
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-    color: gold;
-    font-weight: bold;
-    font-size: 18px;
-} 
 
 .banner5 {
     background-image: url("../assets/imgs/Gothic.jpg");
@@ -252,7 +279,7 @@
 .banner6 .container p {
     width: 280px;
     color:gold;
-    font-size: 26px;
+    font-size: 22px;
     text-align: center;
 }
 
