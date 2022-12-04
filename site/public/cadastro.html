@@ -25,8 +25,7 @@
 
             <div class="navegação">
                 <ul>
-                    <li class="agora"><a href="./index.html">Home</a></li>
-                    <li><a href="#">Valores</a></li>
+                    <li><a href="./index.html">Home</a></li>
                     <li></li>
                     <li><a href="./login.html">Login</a></li>
                 </ul>
@@ -36,12 +35,8 @@
 
     <main>
 
-        <div class="banner">
-            <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
-                </div>
-            </div>
+        <div class="banner_cadastro">
+
 
             <div class="container-tamanho-conteudo">
                 <div class="veu">
@@ -49,30 +44,53 @@
 
                     <div class="card-medio">
                         <h2>Registre-se para adentrar as catacumbas...</h2>
-                        <br>
 
                         <div class="formulario">
+                            <div id="inputs">
+                                <span class="tipo_campo">Nome:</span>
+                                <input id="nome_input" type="text" placeholder="Seu nome">
 
-                            <span class="tipo_campo">Nome:</span>
-                            <input id="nome_input" type="text" placeholder="Seu nome">
+                                <span class="tipo_campo">E-mail:</span>
+                                <input id="email_input" type="text" placeholder="meuemail@provedor.com">
 
-                            <span class="tipo_campo">E-mail:</span>
-                            <input id="email_input" type="text" placeholder="meuemail@provedor.com">
+                                <span class="tipo_campo">Senha:</span>
+                                <input id="senha_input" type="password" placeholder="******">
 
-                            <span class="tipo_campo">Senha:</span>
-                            <input id="senha_input" type="password" placeholder="******">
+                                <span class="tipo_campo">Confirmação da Senha:</span>
+                                <input id="confirmacao_senha_input" type="password" placeholder="******">
+                            </div>
 
-                            <span class="tipo_campo">Confirmação da Senha:</span>
-                            <input id="confirmacao_senha_input" type="password" placeholder="******">
-                            <br>
+                            <div id="perguntas">
+                                <label for="Pergunta-1">Já jogou RPG de Mesa alguma vez?</label>
+                                <select id="Pergunta-1">
+                                    <option value=""></option>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">Não</option>
+                                </select>
+
+                                <label for="Pergunta-2">Qual o seu sistema preferido entre os listados abaixo?</label>
+                                <select id="Pergunta-2">
+                                    <option value=""></option>
+                                    <option value="Dungeons&Dragons">Dungeons & Dragons</option>
+                                    <option value="Tormenta">Tormenta</option>
+                                    <option value="Shadowrun">Shadowrun</option>
+                                    <option value="3D&T">3D&T</option>
+                                    <option value="Call_of_Cthulhu">Call of Cthulhu</option>
+                                </select>
+                            </div>
+
+                            <div class="alerta_erro">
+                                <div class="card_erro" id="cardErro">
+                                    <span id="mensagem_erro"></span>
+                                </div>
+                            </div>
                             <button class="btn" onclick="cadastrar()">Cadastrar</button>
 
                         </div>
                     </div>
-                    
+
                     <div id="div_aguardar" class="loading-div">
-                        <img src="./assets/circle-loading.gif" id="loading-gif">
-                    </div>
+                    </div> 
 
                     <div id="div_erros_login">
 

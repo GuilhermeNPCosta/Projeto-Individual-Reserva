@@ -1,8 +1,14 @@
 /* pagina mural */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 *,
 body {
-  font-family: "Exo 2", sans-serif;
+  font-family: "Barlow" sans-serif;
 }
 
 .avisoCaptura {
@@ -14,7 +20,7 @@ body {
   width: 100%;
   /* border: 3px solid pink; */
   color: rgb(216, 216, 216);
-  font-family: "Exo 2", sans-serif;
+  font-family: "Barlow", sans-serif;
 }
 
 .dash-right .avisos .container {
@@ -50,7 +56,7 @@ body {
 
 .dash-right .avisos .div-form button {
   cursor: pointer;
-  font-family: "Exo 2", sans-serif;
+  font-family: "Barlow", sans-serif;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
@@ -63,7 +69,7 @@ body {
 
 .publicacao-btn-editar {
   cursor: pointer;
-  font-family: "Exo 2", sans-serif;
+  font-family: "Barlow", sans-serif;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
@@ -218,6 +224,7 @@ body {
   margin-top: 6%;
   /* background-color: #c7c7c7; */
 }
+
 
 .btns-dash {
   display: flex;

@@ -2,7 +2,7 @@
 
 .banner {
     background-image: url("../assets/imgs/dungeons-banner.png");
-    padding: 130px 0;
+    padding: 185px 0;
     background-size: cover;
 }
 
@@ -31,6 +31,18 @@
     color:red;
 }
 
+.banner_cadastro {
+    background-image: url("../assets/imgs/Entrada-banner.jpg");
+    padding: 185px 0;
+    background-size: cover;
+}
+
+.banner_login {
+    background-image: url("../assets/imgs/dentro-banner.jpg");
+    padding: 185px 0;
+    background-size: cover;
+}
+
 .container-tamanho-conteudo {
     display: flex;
     justify-content: center;
@@ -41,8 +53,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 20px;
-    width: auto;
+    width: 80%;
 }
 
 .card-medio {
@@ -55,7 +68,29 @@
 .card-medio h2{
     font-size: 22px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    color:darkorchid;
+}
+
+.container_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container_login .veu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: auto;
+}
+
+.card h2 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 30px;
     color:darkorchid;
 }
 
@@ -70,6 +105,32 @@
     margin-bottom: 5px;
     color:deeppink;
     font-weight: bolder;
+}
+
+.formulario p {
+    text-align: center;
+    color: crimson;
+    font-weight: 500;
+}
+
+.formulario a {
+    color: deeppink;
+    font-weight: bold;
+}
+
+.formulario a:hover {
+    cursor: pointer;
+    background-color: darkorchid;
+    color: yellow;
+    text-decoration: underline crimson;
+}
+
+#inputs {
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 200%;
 }
 
 #nome_input {
@@ -94,15 +155,18 @@
 }
 
 #confirmacao_senha_input  {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     padding: 3px;
     border-radius: 7px;
     text-align: center;
 }
 
 .btn {
+    align-self: center;
     padding: 7px;
     border-radius: 12px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-size: 14px;
     font-weight: bolder;
     background-color:crimson;
@@ -114,6 +178,28 @@
     cursor: pointer;
     background-image: url("../assets/imgs/Lich.png");
     background-size: 50%;
+}
+
+#perguntas {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 80%;
+}
+
+#perguntas label {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+#perguntas #Pergunta-1 {
+    margin-bottom: 20px;
+}
+
+#mensagem_erro {
+    color:crimson;
+    margin-bottom: 10px;
 }
 
 #div_aguardar {
