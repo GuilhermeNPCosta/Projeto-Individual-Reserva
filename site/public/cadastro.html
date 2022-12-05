@@ -45,59 +45,130 @@
                     <div class="card-medio">
                         <h2>Registre-se para adentrar as catacumbas...</h2>
 
-                        <div class="formulario">
-                            <div id="inputs">
-                                <span class="tipo_campo">Nome:</span>
-                                <input id="nome_input" type="text" placeholder="Seu nome">
+                        <div class="dentro">
+                            <div class="formulario">
+                                <div id="inputs">
+                                    <span class="tipo_campo">Nome:</span>
+                                    <input id="nome_input" type="text" placeholder="Seu nome">
 
-                                <span class="tipo_campo">E-mail:</span>
-                                <input id="email_input" type="text" placeholder="meuemail@provedor.com">
+                                    <span class="tipo_campo">E-mail:</span>
+                                    <input id="email_input" type="text" placeholder="meuemail@provedor.com">
 
-                                <span class="tipo_campo">Senha:</span>
-                                <input id="senha_input" type="password" placeholder="******">
+                                    <span class="tipo_campo">Senha:</span>
+                                    <input id="senha_input" type="password" placeholder="******">
 
-                                <span class="tipo_campo">Confirmação da Senha:</span>
-                                <input id="confirmacao_senha_input" type="password" placeholder="******">
-                            </div>
-
-                            <div id="perguntas">
-                                <label for="Pergunta-1">Já jogou RPG de Mesa alguma vez?</label>
-                                <select id="Pergunta-1">
-                                    <option value=""></option>
-                                    <option value="Sim">Sim</option>
-                                    <option value="Não">Não</option>
-                                </select>
-
-                                <label for="Pergunta-2">Qual o seu sistema preferido entre os listados abaixo?</label>
-                                <select id="Pergunta-2">
-                                    <option value=""></option>
-                                    <option value="Dungeons&Dragons">Dungeons & Dragons</option>
-                                    <option value="Tormenta">Tormenta</option>
-                                    <option value="Shadowrun">Shadowrun</option>
-                                    <option value="3D&T">3D&T</option>
-                                    <option value="Call_of_Cthulhu">Call of Cthulhu</option>
-                                </select>
-                            </div>
-
-                            <div class="alerta_erro">
-                                <div class="card_erro" id="cardErro">
-                                    <span id="mensagem_erro"></span>
+                                    <span class="tipo_campo">Confirmação da Senha:</span>
+                                    <input id="confirmacao_senha_input" type="password" placeholder="******">
                                 </div>
+
+                                <div id="perguntas">
+                                    <label for="Pergunta1">Já jogou RPG de Mesa alguma vez?</label>
+                                    <select id="Pergunta1" onclick="exibir()">
+                                        <option selected disabled></option>
+                                        <option value="0">Sim</option>
+                                        <option value="1">Não</option>
+                                    </select>
+                                    <div class="imagem1_sel1" id="sim_rpg" style="display: none;">
+                                        <img src="./assets/imgs/taverna-imagem.jpg">
+                                    </div>
+
+                                    <div class="imagem2_sel1" id="nao_rpg" style="display: none;">
+                                        <img src="./assets/imgs/pessoa_desanimada-imagem.jpg">
+                                    </div>
+
+                                    <label for="Pergunta2">Qual o seu sistema preferido entre os listados
+                                        abaixo?</label>
+                                    <select id="Pergunta2" onclick="exibir2()">
+                                        <option selected disabled></option>
+                                        <option value="0">Dungeons & Dragons</option>
+                                        <option value="1">Tormenta</option>
+                                        <option value="2">Shadowrun</option>
+                                        <option value="3">3D&T</option>
+                                        <option value="4">Call of Cthulhu</option>
+                                    </select>
+                                </div>
+
+                                <div class="imagem1_sel2" id="DD" style="display: none;">
+                                    <img src="./assets/imgs/D&D-imagem.jpeg">
+                                </div>
+
+                                <div class="imagem2_sel2" id="TMTRPG" style="display: none;">
+                                    <img src="./assets/imgs/Tormenta-imagem.jpg">
+                                </div>
+
+                                <div class="imagem3_sel2" id="SWR" style="display: none;">
+                                    <img src="./assets/imgs/Shadowrun-imagem.jpg">
+                                </div>
+
+                                <div class="imagem4_sel2" id="TresDT" style="display: none;">
+                                    <img src="./assets/imgs/3D&T-imagem.webp">
+                                </div>
+
+                                <div class="imagem5_sel2" id="CoC" style="display: none;">
+                                    <img src="./assets/imgs/CallofCthulhu-imagem.jpg">
+                                </div>
+
+                                <script>
+                                    var contador_sel1 = 0;
+
+                                    function exibir() {
+                                        const lista_imagens_imagens = [sim_rpg, nao_rpg];
+                                        const lista_imagem = [0, 1];
+                                        
+                                        if (contador_sel1 >= 0) {
+                                            lista_imagens_imagens[contador_sel1].style.display = "none";
+                                        }
+
+                                         for (var contador = 0; contador < 2; contador++) {
+                                            if (Pergunta1.value == lista_imagem[contador]) {
+                                                lista_imagens_imagens[contador].style.display = "block";
+                                                contador_sel1 = contador;
+                                                contador = 2;
+                                            }
+
+                                        }
+                                }
+
+                                var contador2 = 0;
+
+                                function exibir2() {
+                                    const lista_imagens_imagens2 = [DD, TMTRPG, SWR, TresDT, CoC];
+                                    const lista_imagem2 = [0, 1, 2, 3, 4];
+
+                                        if (contador2 >= 0) {
+                                            lista_imagens_imagens2[contador2].style.display = "none";
+                                        }
+
+                                       for (var contador = 0; contador < 5; contador++) {
+                                            if (Pergunta2.value == lista_imagem2[contador]) {
+                                                lista_imagens_imagens2[contador].style.display = "block";
+                                                contador2 = contador;
+                                                contador = 5;
+                                            }
+                                        }
+                                }
+                                </script>
+
+
+                                <div class="alerta_erro">
+                                    <div class="card_erro" id="cardErro">
+                                        <span id="mensagem_erro"></span>
+                                    </div>
+                                </div>
+                                <button class="btn" onclick="cadastrar()">Cadastrar</button>
+
                             </div>
-                            <button class="btn" onclick="cadastrar()">Cadastrar</button>
+                        </div>
+
+                        <div id="div_aguardar" class="loading-div">
+                        </div>
+
+                        <div id="div_erros_login">
 
                         </div>
                     </div>
-
-                    <div id="div_aguardar" class="loading-div">
-                    </div> 
-
-                    <div id="div_erros_login">
-
-                    </div>
                 </div>
             </div>
-        </div>
 
     </main>
 
@@ -119,8 +190,10 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var confirmarPergunta1 = Pergunta1.value;
+        var confirmarPergunta2 = Pergunta2.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || confirmarPergunta1 == "" || confirmarPergunta2 == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
@@ -142,7 +215,9 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                Pergunta1Server: confirmarPergunta1,
+                Pergunta2Server: confirmarPergunta2
             })
         }).then(function (resposta) {
 

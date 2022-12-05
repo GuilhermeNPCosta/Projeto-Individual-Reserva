@@ -286,6 +286,7 @@ input {
 
 .header-left h1 {
   color: crimson;
+  text-align: center;
 }
 
 .hello {

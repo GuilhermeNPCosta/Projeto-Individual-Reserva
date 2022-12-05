@@ -121,19 +121,13 @@ body {
 }
 
 .dash {
-  width: 75%;
+  width: 80%;
   position: relative;
   top: 0;
-  left: 25%;
+  left: 20%;
   background-color: #161618;
-
-  /* width: 75%;
-    display: flex;
-    background-color: #161618;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;*/
   height: 100vh;
+  overflow: auto;
 }
 
 .regua {
@@ -233,16 +227,46 @@ body {
   margin-top: 30px;
 }
 
+#grafico1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .graph {
-  width: 60%;
-  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
   padding-top: 10px;
+}
+
+
+#Pergunta1 {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  margin-bottom: 10vh;
+}
+
+
+#Pergunta2 {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  margin-bottom: 10vh;
 }
 
 .tituloGraficos {
   color: rgb(216, 216, 216);
   display: flex;
   justify-content: center;
+  margin-bottom: 10vh;
 }
 
 .btn-chart {

@@ -22,17 +22,17 @@
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload=" atualizarFeed()">
+<body>
 
     <div class="janela">
         <div class="header-left">
             <h1>Catacumbas de Drungmoor</h1>
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Olá, <span id="b_usuario">aventureiro(a)</span>!</h3>
             </div>
 
-           
+
             <div class="btn-nav">
 
                 <h3>Gráficos</h3>
@@ -51,22 +51,35 @@
 
         </div>
 
+      <!--  <h3 class="tituloGraficos">
+            <span id="tituloAquario"></span>
+        </h3>
+        <div class="graph">
+            <canvas id="Pergunta1"></canvas>
+        </div>
+        <div class="graph">
+            <canvas id="Pergunta2"></canvas>
+        </div>
+        <div class="avisoCaptura">
+            <p id="avisoCaptura" style="color: white"></p>
+        </div> -->
+
         <div class="dash">
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Pergunta 1</button>
-                <button class="btn-chart btn-white" onclick="obterDadosGrafico(2)">Pergunta 2</button>
-            </div>
-            <div>
-                <h3 class="tituloGraficos">
-                    <span id="tituloAquario">123</span>
-                </h3>
-            </div>
-            <div class="graph">
-                <canvas id="myChart"></canvas>
-            </div>
-            <div class="avisoCaptura">
-                <p id="avisoCaptura" style="color: white"></p>
+            <div id="graficos">
+                <div id="grafico1" class="display-block">
+                    <h3 class="tituloGraficos">
+                        <span id="tituloAquario">Perguntas e Respostas</span>
+                    </h3>
+                    <div class="graph">
+                        <canvas id="Pergunta1"></canvas>
+                    </div>
+                    <div class="graph">
+                        <canvas id="Pergunta2"></canvas>
+                    </div>
+                    <div class="label-captura">
+                        <p id="avisoCaptura" style="color: white"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -77,14 +90,13 @@
 </html>
 
 <script>
-    
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    
-    let proximaAtualizacao;
-        
-    window.onload = obterDadosGrafico(1);
 
-    verificar_autenticacao();
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGrafico(), obterDadosGrafico2();
+
 
 
     // O gráfico é construído com três funções:
@@ -99,7 +111,6 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
     function obterDadosGrafico() {
-        alterarTitulo()
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
@@ -111,7 +122,7 @@
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
 
-                    plotarGrafico(resposta, );
+                    plotarGrafico(resposta,);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -125,12 +136,12 @@
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta, ) {
+    function plotarGrafico(resposta) {
         console.log('iniciando plotagem do gráfico...');
 
         // Criando estrutura para plotar gráfico - labels
         let labels = ["Já jogou RPG de Mesa?"];
-        
+
         // Criando estrutura para plotar gráfico - dados
         let dados = {
             labels: labels,
@@ -139,7 +150,7 @@
                 data: [],
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
-                backgroundColor: 'rgb(75, 192, 192)' ,
+                backgroundColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             },
             {
@@ -147,23 +158,22 @@
                 data: [],
                 fill: false,
                 borderColor: 'rgb(199, 52, 52)',
-                backgroundColor: 'rgb(199, 52, 52)' ,
+                backgroundColor: 'rgb(199, 52, 52)',
                 tension: 0.1
             }]
         };
-        
+
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         console.log(resposta)
-        
+
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.umidade);
-            dados.datasets[1].data.push(registro.temperatura);
+            dados.datasets[0].data.push(registro.Sim);
+            dados.datasets[1].data.push(registro.Nao);
         }
-        
+
         console.log('----------------------------------------------')
         console.log('O gráfico será plotado com os respectivos valores:')
         console.log('Labels:')
@@ -171,7 +181,7 @@
         console.log('Dados:')
         console.log(dados.datasets)
         console.log('----------------------------------------------')
-        
+
         // Criando estrutura para plotar gráfico - config
         const config = {
             type: 'bar',
@@ -179,18 +189,131 @@
         };
 
         // Adicionando gráfico criado em div na tela
-        let myChart = new Chart(
-            document.getElementById('myChart'),
+        let Pergunta1 = new Chart(
+            document.getElementById('Pergunta1'),
             config
         );
 
     }
 
 
+    function obterDadosGrafico2() {
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/tempo-real`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico2(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico2(resposta) {
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = ["Qual o seu sistema preferido entre os listados abaixo?"];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados2 = {
+            labels: labels,
+            datasets: [{
+                label: 'Dungeons & Dragons',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(255, 0, 0)',
+                backgroundColor: 'rgb(255, 0, 0)',
+                tension: 0.1
+            },
+            {
+                label: 'Tormenta',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(0, 255, 255)',
+                backgroundColor: 'rgb(0, 255, 255)',
+                tension: 0.1
+            },
+            {
+                label: 'Shadowrun',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(255, 255, 255)',
+                backgroundColor: 'rgb(255, 255, 255)',
+                tension: 0.1
+            },
+            {
+                label: '3D&T',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(150, 25, 90)',
+                backgroundColor: 'rgb(50, 25, 90)',
+                tension: 0.1
+            },
+            {
+                label: 'Call of Cthulhu',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(0, 255, 0)',
+                backgroundColor: 'rgb(0, 255, 0)',
+                tension: 0.1
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados2.datasets[0].data.push(registro.Dungeons_e_Dragons);
+            dados2.datasets[1].data.push(registro.Tormenta);
+            dados2.datasets[2].data.push(registro.Shadowrun);
+            dados2.datasets[3].data.push(registro.TresD_e_T);
+            dados2.datasets[4].data.push(registro.CallofCthulhu);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados2.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config2 = {
+            type: 'bar',
+            data: dados2,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart2 = new Chart(
+            document.getElementById('Pergunta2'),
+            config2
+        );
+
+    }
+
     // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // buscando a última medida inserida em tabela contendo as capturas, 
+    // buscando a última medida inserida em tabela contendo as capturas,
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-  
+
 </script>
